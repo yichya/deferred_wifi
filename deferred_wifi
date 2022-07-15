@@ -1,0 +1,21 @@
+#!/bin/sh /etc/rc.common
+# SPDX-License-Identifier: MIT
+
+START=99
+
+boot() {
+        wifi
+}
+
+start() {
+        wifi
+}
+
+restart() {
+        wifi
+}
+
+stop() {
+        return 0
+}
+
