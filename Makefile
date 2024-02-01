@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=deferred-wifi
-PKG_VERSION:=0.0.1
+PKG_VERSION:=0.0.2
 PKG_RELEASE:=1
 PKG_LICENSE:=MIT
 
@@ -26,7 +26,8 @@ endef
 define Package/deferred-wifi/install
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./deferred_wifi $(1)/etc/init.d/deferred_wifi
+	$(INSTALL_DIR) $(1)/usr/share/deferred_wifi
+	$(INSTALL_BIN) ./watchcat_restart.sh $(1)/usr/share/deferred_wifi/watchcat_restart.sh
 endef
 
 $(eval $(call BuildPackage,deferred-wifi))
-
