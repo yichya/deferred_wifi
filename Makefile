@@ -26,8 +26,8 @@ endef
 define Package/deferred-wifi/install
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./deferred_wifi $(1)/etc/init.d/deferred_wifi
-	$(INSTALL_DIR) $(1)/usr/share/deferred_wifi
-	$(INSTALL_BIN) ./watchcat_restart.sh $(1)/usr/share/deferred_wifi/watchcat_restart.sh
+	$(INSTALL_DIR) $(1)/usr/share/watchcat
+	$(INSTALL_BIN) ./watchcat_restart.sh $(1)/usr/share/watchcat/restart_interface.sh
 endef
 
 $(eval $(call BuildPackage,deferred-wifi))
